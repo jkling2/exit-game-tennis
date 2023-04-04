@@ -1,4 +1,3 @@
-import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from "react-router-bootstrap";
@@ -29,7 +28,7 @@ function App() {
             <Nav.Item>
               <LinkContainer
                 activeClassName="active"
-                to="/intro"
+                to="/exit-game-tennis/intro"
               >
                 <Nav.Link>{"Intro"}</Nav.Link>
               </LinkContainer>
@@ -37,7 +36,7 @@ function App() {
             <Nav.Item>
               <LinkContainer
                 activeClassName="active"
-                to="/game"
+                to="/exit-game-tennis/game"
               >
                 <Nav.Link>{"Game"}</Nav.Link>
               </LinkContainer>
@@ -46,9 +45,10 @@ function App() {
         </Navbar>
         <main id="content" className="ui container">
           <Routes>
-            <Route element={<Rules />} path="/intro" />
-            <Route element={<Game />} path="/game" />
-            <Route element={<Navigate to="/intro" />} path="/" />
+            <Route element={<Rules />} path="/exit-game-tennis/intro" />
+            <Route element={<Game />} path="/exit-game-tennis/game" />
+            <Route element={<Navigate to="/exit-game-tennis/intro" />} path="/" />
+            <Route element={<Navigate to="/exit-game-tennis/intro" />} path="/exit-game-tennis" />
           </Routes>
         </main>
 
