@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.1fd5599d.css",
-    "main.js": "/static/js/main.baf371ea.js",
-    "static/js/787.3fa7242f.chunk.js": "/static/js/787.3fa7242f.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.130d2cc1f5bcf4d334034a92bbd91261.svg",
-    "index.html": "/index.html",
-    "main.1fd5599d.css.map": "/static/css/main.1fd5599d.css.map",
-    "main.baf371ea.js.map": "/static/js/main.baf371ea.js.map",
-    "787.3fa7242f.chunk.js.map": "/static/js/787.3fa7242f.chunk.js.map"
+    "main.css": "/exit-game-tennis/static/css/main.1fd5599d.css",
+    "main.js": "/exit-game-tennis/static/js/main.f3ca867b.js",
+    "static/js/787.3fa7242f.chunk.js": "/exit-game-tennis/static/js/787.3fa7242f.chunk.js",
+    "static/media/logo.svg": "/exit-game-tennis/static/media/logo.130d2cc1f5bcf4d334034a92bbd91261.svg",
+    "index.html": "/exit-game-tennis/index.html",
+    "main.1fd5599d.css.map": "/exit-game-tennis/static/css/main.1fd5599d.css.map",
+    "main.f3ca867b.js.map": "/exit-game-tennis/static/js/main.f3ca867b.js.map",
+    "787.3fa7242f.chunk.js.map": "/exit-game-tennis/static/js/787.3fa7242f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1fd5599d.css",
-    "static/js/main.baf371ea.js"
+    "static/js/main.f3ca867b.js"
   ]
 }
