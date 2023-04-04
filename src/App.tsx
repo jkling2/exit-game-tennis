@@ -28,7 +28,7 @@ function App() {
             <Nav.Item>
               <LinkContainer
                 activeClassName="active"
-                to="/exit-game-tennis/intro"
+                to="/intro"
               >
                 <Nav.Link>{"Intro"}</Nav.Link>
               </LinkContainer>
@@ -36,7 +36,7 @@ function App() {
             <Nav.Item>
               <LinkContainer
                 activeClassName="active"
-                to="/exit-game-tennis/game"
+                to="/game"
               >
                 <Nav.Link>{"Game"}</Nav.Link>
               </LinkContainer>
@@ -45,10 +45,9 @@ function App() {
         </Navbar>
         <main id="content" className="ui container">
           <Routes>
-            <Route element={<Rules />} path="/exit-game-tennis/intro" />
-            <Route element={<Game />} path="/exit-game-tennis/game" />
-            <Route element={<Navigate to="/exit-game-tennis/intro" />} path="/" />
-            <Route element={<Navigate to="/exit-game-tennis/intro" />} path="/exit-game-tennis" />
+            <Route element={<Rules />} path="/intro" />
+            <Route element={<Game />} path="/game" />
+            <Route element={<Navigate to="/intro" />} path="/" />
           </Routes>
         </main>
 

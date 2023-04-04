@@ -18,6 +18,7 @@ const Rules: React.FC = () => {
 
     return (
         <Container>
+            <br />
             <h1>Hallo Jasmin, hallo Freunde von Jasmin,</h1>
             <p>Schafft ihr es rechtzeitig die Tennissachen zu finden und zu befreien, dann freue ich mich auf ein spannendes Tennisspiel - ansonsten wird es ein leichtes und vielleicht auch unfaires Spiel. Aber was tut man nicht alles für einen Sieg.
                 Wenn ihr auf Start drückt, dann fängt der Timer an zu laufen. Ihr habt eine Stunde, um die Tennissachen zu befreien! Wie viel Zeit verstrichen ist, seht ihr am Spielstand: Alle 5 Minuten gewinnt euer Gegner ein Spiel - d.h. nach spätestens 30 Minuten hat euer Gegner den ersten Satz gewonnen, wenn ihr nicht schneller die ersten 6 Rätsel gelöst habt. Dann beginnt Satz 2. Habt ihr in einem Satz beide 5 Spiele gewonnen, dann geht der Satz bis 7. Ihr müsst also ein extra Rätsel lösen, habt dafür aber auch 5 Minuten extra Zeit "gewonnen".
