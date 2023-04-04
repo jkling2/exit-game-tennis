@@ -55,7 +55,7 @@ const Rules: React.FC = () => {
                     onClick={() => {
                         increasePuzzle();
                         setStartTime(Date.now());
-                        navigate("/game" + location.search);
+                        navigate("/exit-game-tennis/game" + location.search);
                     }}>Start</Button>
             </Form>
         </Container>
