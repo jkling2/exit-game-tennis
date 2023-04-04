@@ -25,6 +25,7 @@ jobs:
          with:
             node-version: ${{ matrix.node-version }}
        - run: echo "First workflow was a success"
+       - run: git config --global user.email "jasmin.kling93@gmail.com" && git config --global user.name "Jasmin Kling"
        - run: npm ci
        - run: npm run deploy
 
