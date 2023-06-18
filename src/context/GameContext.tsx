@@ -64,7 +64,7 @@ export const GameContextProvider: React.FC<Props> = ({ children }) => {
     const checkScoreComputer = (time: number) => {
         const firstSet: boolean = setTime === 0;
         const gamesComputer: number = firstSet ? parseInt(score.substring(0, 1)) : parseInt(score.substring(2, 3))
-        if (Math.floor(((time - (firstSet ? startTime : setTime)) / 1000 / 60) / 5) !== gamesComputer) {
+        if (Math.floor(((time - (firstSet ? startTime : setTime)) / 1000 / 60) / 10) !== gamesComputer) {
             const gamesPlayer: number = firstSet ? parseInt(score.substring(1, 2)) : parseInt(score.substring(3));
             var newGamesComputer: number = 0;
             if (gamesPlayer <= 4) {
@@ -101,7 +101,9 @@ export const GameContextProvider: React.FC<Props> = ({ children }) => {
             setPuzzle(8);
             setSetTime(Date.now())
         } else if ((puzzle === 13) || (puzzle === 14)) {
-            if ((parseInt(score.substring(0, 1)) > parseInt(score.substring(1, 2))) || (parseInt(score.substring(2, 3)) > parseInt(score.substring(3)))) {
+            const firstSetWinner = parseInt(score.substring(0, 1)) > parseInt(score.substring(1, 2));
+            const secondSetWinner = parseInt(score.substring(2, 3)) > parseInt(score.substring(3));
+            if (firstSetWinner ? !secondSetWinner : secondSetWinner) {
                 setPuzzle(15)
             } else {
                 setPuzzle(16)

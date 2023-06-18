@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Container, Row, Col, Accordion, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Accordion, Button, Form, Modal } from "react-bootstrap";
 import { GameContext } from "../context/GameContext";
 import { createEmptyPuzzle, createPuzzle1, createPuzzle10, createPuzzle11, createPuzzle12, createPuzzle13, createPuzzle14, createPuzzle15, createPuzzle16, createPuzzle2, createPuzzle3, createPuzzle4, createPuzzle5, createPuzzle6, createPuzzle7, createPuzzle8, createPuzzle9 } from "./Puzzles";
 
@@ -7,7 +7,8 @@ export interface PuzzleInterface {
     header: string,
     prompt?: string,
     hints: string[],
-    solution: string
+    solution: string,
+    action?: string
 }
 
 function checkSolution(solution: string, puzzle: PuzzleInterface): boolean {
@@ -42,6 +43,7 @@ export const Puzzle: React.FC = () => {
 
     const [solution, setSolution] = useState("");
     const [wrongSolution, setWrongSolution] = useState(false);
+    const [action, setAction] = useState("");
     const [puzzleToSolve, setPuzzleToSolve] = useState(puzzles[puzzle]);
     const [activeKey, setActiveKey] = useState<string>("");
 
@@ -52,6 +54,12 @@ export const Puzzle: React.FC = () => {
 
     return (
         <Container>
+            <Modal show={action.length !== 0} onHide={() => setAction("")}>
+                <Modal.Header closeButton onClick={() => setAction("")} />
+                <Modal.Body>
+                    <p>{action}</p>
+                </Modal.Body>
+            </Modal>
             <br />
             <Row style={{ textAlign: "left" }}>
                 <h3>{puzzleToSolve.header}</h3>
@@ -59,15 +67,16 @@ export const Puzzle: React.FC = () => {
             {puzzleToSolve.solution.length !== 0 && <br />}
             {puzzleToSolve.solution.length !== 0 && <Form onSubmit={e => { e.preventDefault(); }}>
                 <Row style={{ textAlign: "left" }}>
-                    {puzzleToSolve.prompt ? puzzleToSolve.prompt.split("|").map((text) => <p>{text}</p>) : "Lösung"}
+                    {puzzleToSolve.prompt ? puzzleToSolve.prompt.split("\\").map((text) => <div>{text}</div>) : "Lösung"}
                     <br />
                 </Row>
+                <br />
                 <Row lg={2}>
                     <Col>
                         <Form.Control
                             type="text"
                             id="solution"
-                            placeholder="Gebt Eure Lösung ein"
+                            placeholder={isNaN(parseInt(puzzleToSolve.solution)) ? "Gebt ein Wort ein" : `${puzzleToSolve.solution.length} Ziffern`}
                             defaultValue={solution}
                             value={solution}
                             onChange={(event: { currentTarget: { value: string } }) => {
@@ -80,6 +89,9 @@ export const Puzzle: React.FC = () => {
                         variant="dark"
                         onClick={() => {
                             if (checkSolution(solution, puzzleToSolve)) {
+                                if (puzzleToSolve.action) {
+                                    setAction(puzzleToSolve.action);
+                                }
                                 setWrongSolution(false);
                                 setActiveKey("");
                                 setTimeout(() => increasePuzzle(), 500);
