@@ -49,7 +49,7 @@ const Game: React.FC = () => {
                     <Row lg={1}><h4>Score-Board</h4></Row>
                     <Row lg={3}><Col style={{ textAlign: "right" }}><h2>{score.substring(0, 1)}</h2></Col><Col><h2>Set1</h2></Col><Col style={{ textAlign: "left" }}><h2>{score.substring(1, 2)}</h2></Col></Row>
                     <Row lg={3}><Col style={{ textAlign: "right" }}><h2>{score.substring(2, 3)}</h2></Col><Col><h2>Set2</h2></Col><Col style={{ textAlign: "left" }}><h2>{score.substring(3)}</h2></Col></Row>
-                    <Row lg={3}><Col style={{ textAlign: "right" }}><h2>{"Andrea"}</h2></Col><Col><h2>V</h2></Col><Col style={{ textAlign: "left" }}><h2>{name}</h2></Col></Row>
+                    <Row lg={3}><Col style={{ textAlign: "right" }}><h2>{"Andrea"}</h2></Col><Col><h2>V</h2></Col><Col style={{ textAlign: "left", overflow: "auto" }}><h2>{name}</h2></Col></Row>
                     <br />
                     {startTime !== 0 && <Row lg={1}><h4>Total time passed: {formatTime(date.valueOf() - startTime)}</h4></Row>}
                 </Col>

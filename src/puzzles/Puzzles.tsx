@@ -102,9 +102,10 @@ export function createPuzzle8(): PuzzleInterface {
 export function createPuzzle9(): PuzzleInterface {
     return {
         header: "#9: 1000 miese Tennis-Tricks",
-        prompt: "9.0 Ich freue mich, wenn ihr dieses schöne Rätsel ziemlich schnell löst \\ = 6.2 & 8.11 & 9.1 & 3.1 & ihr & 2.2 & s & 7.10 & 10.6 & Rätsel & 11.4 & schnell & löst \\" +
-            "9.1 8.3 & 20.5 & n \\" +
-            "9.2 5.2 & 8.9 & 11.2",
+        prompt: "S9.0 -- Ich freue mich, wenn ihr dieses schöne Rätsel ziemlich schnell löst \\ --> Übersetzung = 6:2 & 8:11 & 9:1 & 3:1 & ihr & 2:2 & s & 7:10 & 10:6 & Rätsel & 11:4 & schnell & löst \\" +
+            "----------------------------------\\" +    
+            "S9.1 -- 8:3 & 20:5 & n \\" +
+            "S9.2 -- 5:2 & 8:9 & 11:2",
         solution: "1871",
         hints: ["Habt ihr das Buch und den Hinweis auf die Buchseiten gefunden?",
             "Ihr müsst mit Hilfe der entsprechenden Seite dekodieren.",
